@@ -24,23 +24,20 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 ---
 
 ## Setup the Environment
-
-* Create a virtualenv with Python 3.7 and activate it. Refer to this link for help on specifying the Python version in the virtualenv. 
-```bash
-python3 -m pip install --user virtualenv
-# You should have Python 3.7 available in your host. 
-# Check the Python path using `which python3`
-# Use a command similar to this one:
-python3 -m virtualenv --python=<path-to-Python3.7> .devops
-source .devops/bin/activate
-```
+* Create a virtualenv and activate it by executing
+* Source the virtual environment
 * Run `make install` to install the necessary dependencies
+```
+python3 -m venv <your_venv>
+source <your_venv>/bin/activate
+make install
+```
 
 ### Running `app.py`
 
 1. Standalone:  `python app.py`
 2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+3. Run in Kubernetes:  `./upload_docker.sh && ./run_kubernetes.sh`
 
 ### Kubernetes Steps
 
@@ -48,3 +45,19 @@ source .devops/bin/activate
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
 * Run via kubectl
+
+## Directory Structure
+
+| Directory/File | Description |
+| ---- | ----------- |
+| `.circleci/config.yml` | CircleCI configuration |
+| `model_data` | Trained model data for housing prices in Boston |
+| `output_txt_files` | Docker and Kubernetes log output |
+| `app.py` | REST Endpoint for predicting housing prices in Boston |
+| `Dockerfile` | Dockerfile containing the application and its dependencies |
+| `make_prediction.sh` | Calls prediction REST endpoint and simulates sample prediction |
+| `Makefile` | Build file of the project |
+| `requirements.txt` | Python requirements |
+| `run_docker.sh` | Shell script for creating and running docker container |
+| `run_kubernetes.sh` | Shell script to deploy docker container on Kubernetes cluster |
+| `upload_docker.sh` | Shell script for uploading locally built docker image to dockerhub repository |
