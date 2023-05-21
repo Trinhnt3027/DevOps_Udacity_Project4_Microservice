@@ -1,4 +1,5 @@
-<include a CircleCI status badge, here>
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/Trinhnt3027/DevOps_Udacity_Project4_Microservice/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/Trinhnt3027/DevOps_Udacity_Project4_Microservice/tree/main)
+
 
 ## Project Overview
 
